@@ -2,7 +2,14 @@
 
 This is a static api for CuCoders Community web site to mock github users api. Github user API have a request limit and por hour and our web site make a build proces and make a lot of request for each user, so we are going to mock the github user api to this end point.
 
-## API
+## API endpoints
+
+
+<code>GET</code> <code><b>/members-list</b></code> <code>(get a list with the members usernames)</code>
+
+<code>GET</code> <code><b>/members-data</b></code> <code>(get a object with all members and members data)</code>
+
+<code>GET</code> <code><b>/members-data/{username}</b></code> <code>(get a object with member data)</code>
 
 
 ## 🧞 Commands
