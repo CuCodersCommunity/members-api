@@ -5,7 +5,6 @@ This is a static api for CuCoders Community web site to mock github users api. G
 ## API
 
 
-
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
