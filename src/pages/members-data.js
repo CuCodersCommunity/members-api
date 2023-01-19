@@ -1,14 +1,15 @@
 const data = import.meta.glob("../data/members/*.json");
-var memberList = [];
+import { expandMemberAPI } from "../helpers/extendMemberAPI";
+var members = {};
 
 for (const path in data) {
   await data[path]().then((mod) => {
-    memberList.push(mod.username);
+    members[mod.username] = expandMemberAPI(mod);
   });
 }
 
 export async function get({ params, request }) {
   return {
-    body: JSON.stringify(memberList),
+    body: JSON.stringify(members),
   };
 }
