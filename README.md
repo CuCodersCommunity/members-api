@@ -9,7 +9,7 @@ This is a static api for CuCoders Community web site to mock github users api. G
 
 <code>GET</code> <code><b>/members-data</b></code> <code>(get a object with all members and members data)</code>
 
-<code>GET</code> <code><b>/members-data/{username}</b></code> <code>(get a object with member data)</code>
+<code>GET</code> <code><b>/members/{username}</b></code> <code>(get a object with member data)</code>
 
 
 ## 🧞 Commands
