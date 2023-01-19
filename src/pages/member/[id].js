@@ -4,6 +4,15 @@ import memberLists from "../../../data/members.json";
 
 var users_data = {};
 
+const allPosts = await import.meta.glob("../../../data/members/*.json");
+
+for (const path in allPosts) {
+  allPosts[path]().then((mod) => {
+    const asd = mod.default;
+    console.log(asd.user);
+  });
+}
+
 for (const member of memberLists) {
   const octokit = new Octokit({ auth: import.meta.env.SECRET_GITHUB_TOKEN });
   const response = await octokit.request("GET /users/" + member, { username: member });
@@ -13,12 +22,19 @@ for (const member of memberLists) {
 
 export async function get({ params, request }) {
   const id = params.id;
-  console.log(users_data);
   return {
     body: JSON.stringify(users_data[id]),
   };
 }
 
 export function getStaticPaths() {
-  return [{ params: { id: "manuelernestog" } }, { params: { id: "AlexCuan" } }, { params: { id: "Ragnarok22" } }];
+  var pathList = [];
+
+  for (const member of memberLists) {
+    const path = {
+      params: { id: member },
+    };
+    pathList.push(path);
+  }
+  return pathList;
 }
