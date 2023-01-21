@@ -1,16 +1,18 @@
 {
-    "username": "ragnarok22",
-    "id": 8838803,
-    "type": "User",
-    "name": "Reinier Hernández",
-    "company": null,
-    "blog": "https://blog.ragnarok22.dev",
-    "location": "Cuba",
-    "email": null,
-    "hireable": null,
-    "bio": "Software developer. Python lover. Runner and buddhist",
-    "twitter_username": "RagnarokReinier",
-    "followers": 66,
-    "headline": "Software Developer"
-  }
-  
+  "username": "ragnarok22",
+  "id": 8838803,
+  "type": "User",
+  "name": "Reinier Hernández",
+  "company": null,
+  "blog": "https://blog.ragnarok22.dev",
+  "location": "Cuba",
+  "email": null,
+  "hireable": null,
+  "bio": "Software developer. Python lover. Runner and buddhist",
+  "twitter_username": "RagnarokReinier",
+  "followers": 66,
+  "headline": "Software Developer",
+  "roles": ["Cloud Engineer", "Data Engineer", "Mobile Developer", "Game Developer"],
+  "telegram_username": "",
+  "linkedin_username": ""
+}
