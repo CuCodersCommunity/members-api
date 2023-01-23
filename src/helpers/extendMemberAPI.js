@@ -5,7 +5,7 @@ function expandMemberAPI(obj) {
   new_obj["github_url"] = "https://github.com/" + obj.username;
 
   if (!obj.name) {
-    new_obj["obj.name"] = "@" + obj.username;
+    new_obj["name"] = "@" + obj.username;
   }
 
   return new_obj;
