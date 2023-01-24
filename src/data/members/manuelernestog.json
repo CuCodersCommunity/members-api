@@ -7,7 +7,7 @@
   "blog": "manuelernestog.github.io",
   "location": null,
   "email": null,
-  "hireable": null,
+  "hireable": true,
   "bio": "Software Engineer • JS • Emprendimiento • Creo soluciones y comparto lo que aprendo 👨🏻‍💻 Construyendo: WeekToDo | @CuCodersCommunity",
   "twitter_username": "manuelernestog",
   "followers": 68,
