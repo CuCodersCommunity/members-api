@@ -10,6 +10,7 @@ async function generateMemberEndpoint(githubMemberData) {
     avatar_url_small: "https://avatars.githubusercontent.com/u/" + githubMemberData.id + "?s=64&v=4",
     avatar_url_medium: "https://avatars.githubusercontent.com/u/" + githubMemberData.id + "?s=128&v=4",
     github_url: "https://github.com/" + githubMemberData.login,
+    categories: []
   };
   const data = await getRemoteFileData(
     `https://raw.githubusercontent.com/${githubMemberData.login}/${githubMemberData.login}/main/cucoders_data/profile-data.json`,
