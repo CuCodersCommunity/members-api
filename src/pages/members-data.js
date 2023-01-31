@@ -1,11 +1,13 @@
 const data = import.meta.glob("../data/members/*.json");
-import { expandMemberAPI } from "../helpers/extendMemberAPI";
+import { generateMemberEndpoint } from "../helpers/generateMemberEndpoint";
+import {backend_url} from "../config.json"
 var members = {};
 
-for (const path in data) {
-  await data[path]().then((mod) => {
-    members[mod.username] = expandMemberAPI(mod);
-  });
+const respose = await fetch(backend_url + "api/members/get-all-members");
+const allMembers = await respose.json();
+
+for (const member in allMembers) {
+    members[allMembers[member].login] = await generateMemberEndpoint(allMembers[member]);
 }
 
 export async function get({ params, request }) {
