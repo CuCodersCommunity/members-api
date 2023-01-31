@@ -1,15 +1,15 @@
-import { expandMemberAPI } from "../../helpers/extendMemberAPI";
+import { generateMemberEndpoint } from "../../helpers/generateMemberEndpoint";
+import {backend_url} from "../../config.json"
 
-const data = import.meta.glob("../../data/members/*.json");
 var members = {};
-var memberLists = []
+var memberLists = [];
 
+const respose = await fetch(backend_url + "api/members/get-all-members");
+const allMembers = await respose.json();
 
-for (const path in data) {
-  await data[path]().then((mod) => {
-    members[mod.username] = expandMemberAPI(mod);
-    memberLists.push(mod.username);
-  });
+for (const member in allMembers){
+  memberLists.push(allMembers[member].login);
+  members[allMembers[member].login] = await generateMemberEndpoint(allMembers[member]);
 }
 
 export async function get({ params, request }) {
