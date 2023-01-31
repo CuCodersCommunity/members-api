@@ -8,9 +8,9 @@ const respose = await fetch(backend_url + "api/members/get-all-members");
 const allMembers = await respose.json();
 
 for (const member in allMembers) {
-  memberLists.push(allMembers[member].login);
   const data = await generateMemberEndpoint(allMembers[member]);
   if (data) {
+    memberLists.push(allMembers[member].login);
     members[allMembers[member].login] = data;
   }
 }
