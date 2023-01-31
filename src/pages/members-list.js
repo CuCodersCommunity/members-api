@@ -1,10 +1,11 @@
-const data = import.meta.glob("../data/members/*.json");
+import {backend_url} from "../config.json"
 var memberList = [];
 
-for (const path in data) {
-  await data[path]().then((mod) => {
-    memberList.push(mod.username);
-  });
+const respose = await fetch(backend_url + "api/members/get-all-members");
+const allMembers = await respose.json();
+
+for (const member in allMembers) {
+  memberList.push(allMembers[member].login);
 }
 
 export async function get({ params, request }) {

@@ -1,4 +1,3 @@
-const data = import.meta.glob("../data/members/*.json");
 import { generateMemberEndpoint } from "../helpers/generateMemberEndpoint";
 import {backend_url} from "../config.json"
 var members = {};
