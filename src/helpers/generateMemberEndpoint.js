@@ -32,8 +32,6 @@ async function generateMemberEndpoint(githubMemberData) {
     profileData.categories = data.categories;
     profileData.telegram_username = data.telegram_username;
     profileData.linkedin_username = data.linkedin_username;
-  } else {
-    return null;
   }
 
   return profileData;
