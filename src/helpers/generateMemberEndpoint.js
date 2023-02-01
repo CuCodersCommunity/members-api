@@ -34,7 +34,7 @@ async function generateMemberEndpoint(githubMemberData) {
     profileData.telegram_username = data.telegram_username;
     profileData.linkedin_username = data.linkedin_username;
   } else {
-    profileData = await getGitHubUserData(githubMemberData.login);
+    profileData = await getGitHubUserData(profileData);
   }
 
   return profileData;
