@@ -12,6 +12,7 @@ async function generateMemberEndpoint(githubMemberData) {
     avatar_url_medium: "https://avatars.githubusercontent.com/u/" + githubMemberData.id + "?s=128&v=4",
     github_url: "https://github.com/" + githubMemberData.login,
     categories: [],
+    repository_branch_name: "main"
   };
   const data = await getRemoteFileData(
     `https://raw.githubusercontent.com/${githubMemberData.login}/${githubMemberData.login}/main/cucoders_data/profile-data.json`,
@@ -33,6 +34,7 @@ async function generateMemberEndpoint(githubMemberData) {
     profileData.categories = data.categories;
     profileData.telegram_username = data.telegram_username;
     profileData.linkedin_username = data.linkedin_username;
+    profileData.repository_branch_name = data.repository_branch_name;
   } else {
     profileData = await getGitHubUserData(profileData);
   }
